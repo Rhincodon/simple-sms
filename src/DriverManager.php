@@ -156,7 +156,8 @@ class DriverManager extends Manager
         $provider = new NexmoSMS(
             new Client(),
             $config['api_key'],
-            $config['api_secret']
+            $config['api_secret'],
+            $config['api_ending']
         );
 
         return $provider;

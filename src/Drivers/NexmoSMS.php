@@ -22,7 +22,7 @@ class NexmoSMS extends AbstractSMS implements DriverInterface
      *
      * @var array
      */
-    protected $apiEnding = ['type' => 'unicode'];
+    protected $apiEnding;
 
     /**
      * The API key.
@@ -50,11 +50,12 @@ class NexmoSMS extends AbstractSMS implements DriverInterface
      *
      * @param Client $client The Guzzle Client
      */
-    public function __construct(Client $client, $apiKey, $apiSecret)
+    public function __construct(Client $client, $apiKey, $apiSecret, $apiEnding)
     {
         $this->client = $client;
         $this->apiKey = $apiKey;
         $this->apiSecret = $apiSecret;
+        $this->apiEnding = $apiEnding;
     }
 
     /**
